@@ -1,0 +1,337 @@
+heatmap for A is:
+[404, 912, 641, 552, 340]
+      X                   
+      X                   
+      X                   
+      X    X              
+      X    X    X         
+      X    X    X         
+ X    X    X    X         
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for B is:
+[395, 42, 150, 67, 30]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X              
+ X         X              
+ X    X    X    X         
+
+heatmap for C is:
+[469, 99, 161, 276, 103]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X              X         
+ X              X         
+ X         X    X         
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for D is:
+[262, 45, 194, 188, 321]
+                     X    
+                     X    
+ X                   X    
+ X                   X    
+ X         X         X    
+ X         X    X    X    
+ X         X    X    X    
+ X         X    X    X    
+ X         X    X    X    
+ X    X    X    X    X    
+
+heatmap for E is:
+[183, 727, 464, 850, 1170]
+                     X    
+                     X    
+                     X    
+                X    X    
+      X         X    X    
+      X         X    X    
+      X         X    X    
+      X    X    X    X    
+      X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for F is:
+[302, 17, 66, 74, 52]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X    X         
+ X         X    X    X    
+
+heatmap for G is:
+[277, 38, 196, 182, 69]
+ X                        
+ X                        
+ X                        
+ X         X              
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X    X    
+ X    X    X    X    X    
+
+heatmap for H is:
+[196, 325, 46, 89, 253]
+      X                   
+      X                   
+      X                   
+      X              X    
+ X    X              X    
+ X    X              X    
+ X    X              X    
+ X    X              X    
+ X    X         X    X    
+ X    X    X    X    X    
+
+heatmap for I is:
+[100, 542, 543, 521, 61]
+           X              
+      X    X    X         
+      X    X    X         
+      X    X    X         
+      X    X    X         
+      X    X    X         
+      X    X    X         
+      X    X    X         
+      X    X    X         
+ X    X    X    X    X    
+
+heatmap for J is:
+[76, 3, 8, 6, 0]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X              
+
+heatmap for K is:
+[98, 35, 77, 128, 178]
+                     X    
+                     X    
+                     X    
+                X    X    
+                X    X    
+ X              X    X    
+ X         X    X    X    
+ X         X    X    X    
+ X         X    X    X    
+ X    X    X    X    X    
+
+heatmap for L is:
+[240, 409, 352, 398, 416]
+                     X    
+      X         X    X    
+      X    X    X    X    
+      X    X    X    X    
+      X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for M is:
+[315, 96, 198, 174, 131]
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X              
+ X         X    X         
+ X         X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for N is:
+[143, 210, 394, 390, 400]
+                     X    
+           X    X    X    
+           X    X    X    
+           X    X    X    
+           X    X    X    
+      X    X    X    X    
+      X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for O is:
+[122, 824, 520, 343, 178]
+      X                   
+      X                   
+      X                   
+      X                   
+      X    X              
+      X    X              
+      X    X    X         
+      X    X    X         
+      X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for P is:
+[385, 139, 160, 139, 93]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X              
+ X    X    X    X         
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for Q is:
+[55, 10, 8, 0, 0]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X    X    X              
+
+heatmap for R is:
+[258, 555, 536, 401, 445]
+      X                   
+      X    X              
+      X    X         X    
+      X    X    X    X    
+      X    X    X    X    
+      X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for S is:
+[859, 54, 235, 368, 341]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X              X         
+ X              X    X    
+ X         X    X    X    
+ X         X    X    X    
+
+heatmap for T is:
+[379, 168, 310, 352, 526]
+                     X    
+                     X    
+                     X    
+ X                   X    
+ X              X    X    
+ X         X    X    X    
+ X         X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for U is:
+[115, 503, 351, 244, 34]
+      X                   
+      X                   
+      X                   
+      X                   
+      X    X              
+      X    X              
+      X    X    X         
+      X    X    X         
+ X    X    X    X         
+ X    X    X    X         
+
+heatmap for V is:
+[114, 37, 130, 107, 0]
+           X              
+           X              
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X    X    X    X         
+ X    X    X    X         
+
+heatmap for W is:
+[183, 83, 101, 62, 59]
+ X                        
+ X                        
+ X                        
+ X                        
+ X                        
+ X         X              
+ X    X    X              
+ X    X    X    X    X    
+ X    X    X    X    X    
+ X    X    X    X    X    
+
+heatmap for X is:
+[11, 28, 39, 4, 45]
+                     X    
+                     X    
+           X         X    
+           X         X    
+      X    X         X    
+      X    X         X    
+      X    X         X    
+      X    X         X    
+ X    X    X         X    
+ X    X    X         X    
+
+heatmap for Y is:
+[43, 101, 93, 44, 763]
+                     X    
+                     X    
+                     X    
+                     X    
+                     X    
+                     X    
+                     X    
+                     X    
+                     X    
+      X    X         X    
+
+heatmap for Z is:
+[31, 13, 42, 56, 7]
+                X         
+                X         
+                X         
+           X    X         
+           X    X         
+ X         X    X         
+ X         X    X         
+ X         X    X         
+ X    X    X    X         
+ X    X    X    X    X    
