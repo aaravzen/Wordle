@@ -24,7 +24,14 @@ def get_words_from_dictionary(fname):
 def output_five_word_dictionary(fname, dictionary_contents):
     with open(fname, "w") as f:
         f.write("\n".join(word for word in dictionary_contents))
-            
+
+def pull_word_list_from_dictionary(fname="dictionary.txt"):
+    arr = []
+    with open(fname) as f:
+        for line in f:
+            arr.append(line.strip())
+    return arr
+
 def main():
     raw_dict_fname = "raw_dictionary.txt"
     words = get_words_from_dictionary(raw_dict_fname)

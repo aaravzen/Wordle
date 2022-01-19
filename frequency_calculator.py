@@ -1,9 +1,4 @@
-def pull_word_list_from_dictionary(fname):
-    arr = []
-    with open(fname) as f:
-        for line in f:
-            arr.append(line.strip())
-    return arr
+from dictionary_helper import pull_word_list_from_dictionary
 
 def create_frequency_dict(word_list):
     freq = {}
@@ -37,10 +32,8 @@ def write_frequency_graph(fname, frequency_distribution, word_count):
         f.write('\n\nie. the word "AARAV" would only increment the count of A by 1')
         f.write("\n(but that word isn't included because it's not in the dictionary, dw)")
 
-
 def main():
-    dict_fname = "dictionary.txt"
-    word_list = pull_word_list_from_dictionary(dict_fname)
+    word_list = pull_word_list_from_dictionary()
     frequency_dict = create_frequency_dict(word_list)
     frequency_fname = "frequency.txt"
     write_frequency_graph(frequency_fname, frequency_dict, len(word_list))
