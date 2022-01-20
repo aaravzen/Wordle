@@ -1,6 +1,6 @@
 caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-def get_words_from_dictionary(fname):
+def get_words_from_webster_dictionary(fname):
     s = set()
     arr = []
     with open(fname) as f:
@@ -11,9 +11,7 @@ def get_words_from_dictionary(fname):
             else:
                 continue
             
-            if word in s:
-                continue
-            if len(word) != 5:
+            if word in s or len(word) != 5:
                 continue
 
             if all(c in caps for c in word):
@@ -21,22 +19,45 @@ def get_words_from_dictionary(fname):
                 s.add(word)
     return arr
 
+def get_words_from_words_file(fname):
+    s = set()
+    arr = []
+    with open(fname) as f:
+        for line in f:
+            word = line.strip().upper()
+            if word in s or len(word) != 5:
+                continue
+            arr.append(word)
+            s.add(word)
+    return arr
+
 def output_five_word_dictionary(fname, dictionary_contents):
     with open(fname, "w") as f:
         f.write("\n".join(word for word in dictionary_contents))
 
-def pull_word_list_from_dictionary(fname="dictionary.txt"):
+def pull_word_list_from_dictionary(fname="dictionaries/dictionary.txt"):
     arr = []
     with open(fname) as f:
         for line in f:
             arr.append(line.strip())
     return arr
 
-def main():
-    raw_dict_fname = "raw_dictionary.txt"
-    words = get_words_from_dictionary(raw_dict_fname)
-    parsed_dict_fname = "dictionary.txt"
+def old_webster_workflow():
+    # Pulls words from Webster's Unabridged Dictionary off Project Gutenburg
+    raw_dict_fname = "dictionaries/raw_dictionary.txt"
+    words = get_words_from_webster_dictionary(raw_dict_fname)
+    parsed_dict_fname = "dictionaries/websters_dictionary.txt"
     output_five_word_dictionary(parsed_dict_fname, words)
+
+def new_unix_workflow():
+    raw_words_fname = "dictionaries/words.txt"
+    words = get_words_from_words_file(raw_words_fname)
+    parsed_dict_fname = "dictionaries/dictionary.txt"
+    output_five_word_dictionary(parsed_dict_fname, words)
+
+def main():
+    old_webster_workflow()
+    new_unix_workflow()
         
 if __name__ == "__main__":
     main()

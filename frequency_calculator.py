@@ -35,7 +35,7 @@ def write_frequency_graph(fname, frequency_distribution, word_count):
 def main():
     word_list = pull_word_list_from_dictionary()
     frequency_dict = create_frequency_dict(word_list)
-    frequency_fname = "frequency.txt"
+    frequency_fname = "unix_results/unix_frequency.txt"
     write_frequency_graph(frequency_fname, frequency_dict, len(word_list))
         
 if __name__ == "__main__":
