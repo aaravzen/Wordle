@@ -38,7 +38,7 @@ def create_letter_heatmaps(word_list):
     return heatmaps, heatmap_strings
 
 def write_heatmap_strings(heatmap_strings):
-    with open("heatmaps.txt", "w") as f:
+    with open("unix_results/unix_heatmaps.txt", "w") as f:
         f.write("\n".join(line for line in heatmap_strings))
 
 def compare_words_with_heatmaps(word_list, heatmaps):
@@ -54,7 +54,7 @@ def compare_words_with_heatmaps(word_list, heatmaps):
     return score_tuples
 
 def write_most_green_words(most_green_words):
-    with open("most_green_words.txt", "w") as f:
+    with open("unix_results/unix_most_green_words.txt", "w") as f:
         f.write("\n".join(f"{idx+1}. {score_tuple[0]} ({score_tuple[1]})" for idx,score_tuple in enumerate(most_green_words)))
 
 def main():
