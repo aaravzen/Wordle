@@ -42,22 +42,29 @@ def pull_word_list_from_dictionary(fname="dictionaries/dictionary.txt"):
             arr.append(line.strip())
     return arr
 
-def old_webster_workflow():
+def webster_workflow():
     # Pulls words from Webster's Unabridged Dictionary off Project Gutenburg
     raw_dict_fname = "dictionaries/raw_dictionary.txt"
     words = get_words_from_webster_dictionary(raw_dict_fname)
     parsed_dict_fname = "dictionaries/websters_dictionary.txt"
     output_five_word_dictionary(parsed_dict_fname, words)
 
-def new_unix_workflow():
+def unix_workflow():
     raw_words_fname = "dictionaries/words.txt"
+    words = get_words_from_words_file(raw_words_fname)
+    parsed_dict_fname = "dictionaries/unix_dictionary.txt"
+    output_five_word_dictionary(parsed_dict_fname, words)
+
+def wordle_workflow():
+    raw_words_fname = "dictionaries/wordle_words.txt"
     words = get_words_from_words_file(raw_words_fname)
     parsed_dict_fname = "dictionaries/dictionary.txt"
     output_five_word_dictionary(parsed_dict_fname, words)
 
 def main():
-    old_webster_workflow()
-    new_unix_workflow()
+    webster_workflow()
+    unix_workflow()
+    wordle_workflow()
         
 if __name__ == "__main__":
     main()
