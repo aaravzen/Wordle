@@ -81,6 +81,7 @@ def main():
     user_answer = input()
     wordle_round = 1
     while user_answer.upper() != "GGGGG" and wordle_round < 6:
+        wordle_round += 1
         greens,yellows,reds,good_letters = calculate_new_colors(guess, user_answer, greens, yellows, reds, good_letters)
         print(f"\ngreens: {greens}")
         print(f"yellows: {yellows}")
@@ -91,6 +92,7 @@ def main():
         print(f"These are you options now: {', '.join(w for w in found)}")
         print(f"Press enter to use {guess}, or else type what you want to use")
         user_guess = input().strip().upper()
+        if user_guess == "GGGGG": break
         while "-" in user_guess:
             print("don't think you wanted to do that champ. try again")
             user_guess = input().strip().upper()
@@ -98,7 +100,6 @@ def main():
             guess = user_guess
         print(f"You used {guess}. What does that give you?")
         user_answer = input()
-        wordle_round += 1
     if user_answer.upper() == "GGGGG":
         print(f"Yay! you just got the wordle in {wordle_round} rounds!")
     else:
