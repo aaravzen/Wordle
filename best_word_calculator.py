@@ -13,9 +13,12 @@ def get_yellow_words():
 def get_green_words():
     return get_best_words("wordle_results/wordle_most_green_words.txt")
 
-def find_best_words():
-    yellow_words = get_yellow_words()
-    green_words = get_green_words()
+def find_best_words(yellow_words=None, green_words=None):
+    if not yellow_words:
+        yellow_words = get_yellow_words()
+    if not green_words:
+        green_words = get_green_words()
+
     green_dict = {x[0]:x[1] for x in green_words}
     combined_words = []
     for word,yellow_score in yellow_words:
@@ -24,8 +27,8 @@ def find_best_words():
     combined_words.sort(key=lambda x: (x[1],x[2]), reverse=True)
     return combined_words
 
-def get_sorted_best_word_list():
-    best_words = find_best_words()
+def get_sorted_best_word_list(yellow_words=None, green_words=None):
+    best_words = find_best_words(yellow_words, green_words)
     return [x[0] for x in best_words]
 
 def main():

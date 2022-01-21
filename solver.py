@@ -1,5 +1,31 @@
 from best_word_calculator import get_sorted_best_word_list
 
+def calculate_refreshed_yellow_words(word_list, greens):
+    # calculate modified frequency distribution
+    frequency_dist = {}
+    for word in word_list:
+        unique_letters = set()
+        for idx,c in enumerate(greens):
+            if c == '-':
+                unique_letters.add(word[idx])
+        for letter in unique_letters:
+            if letter not in frequency_dist:
+                frequency_dist[letter] = 0
+            frequency_dist[letter] += 1
+    # calculate words with most yellow in modified fashion
+    word_value_tuples = []
+    for word in word_list:
+        wordset = set()
+        for idx,c in enumerate(greens):
+            if c == '-':
+                wordset.add(word[idx])
+        score = 0
+        for letter in wordset:
+            score += frequency_dist[letter]
+        word_value_tuples.append((word, score))
+    word_value_tuples.sort(key=lambda x: x[1], reverse=True)
+    return word_value_tuples
+
 def word_finder(word_list, greens, yellows, reds):
     ret = []
     for word in word_list:
@@ -25,24 +51,28 @@ def word_finder(word_list, greens, yellows, reds):
             ret.append(word)
     return ret
 
-def calculate_new_colors(guess,response,greens,yellows,reds):
+def calculate_new_colors(guess,response,greens,yellows,reds,good_letters):
     new_greens = ""
     for idx,color in enumerate(response):
         if color.upper() == "G":
             new_greens += guess[idx]
+            good_letters.add(guess[idx])
         elif color.upper() == "Y":
             yellows.append((guess[idx],idx))
             new_greens += greens[idx]
+            good_letters.add(guess[idx])
         else:
-            reds += guess[idx]
+            if guess[idx] not in good_letters:
+                reds += guess[idx]
             new_greens += greens[idx]
-    return new_greens,yellows,reds
+    return new_greens,yellows,reds,good_letters
 
 
 def main():
     greens = "-----"
     yellows = []
     reds = ""
+    good_letters = set()
     word_list = get_sorted_best_word_list()
     found = word_finder(word_list, greens, yellows, reds)
     guess = found[0]
@@ -51,15 +81,19 @@ def main():
     user_answer = input()
     wordle_round = 1
     while user_answer.upper() != "GGGGG" and wordle_round < 6:
-        greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds)
+        greens,yellows,reds,good_letters = calculate_new_colors(guess, user_answer, greens, yellows, reds, good_letters)
         print(f"\ngreens: {greens}")
         print(f"yellows: {yellows}")
         print(f"reds: {reds}\n")
         found = word_finder(word_list, greens, yellows, reds)
+        found = get_sorted_best_word_list(calculate_refreshed_yellow_words(found, greens))
         guess = found[0]
         print(f"These are you options now: {', '.join(w for w in found)}")
         print(f"Press enter to use {guess}, or else type what you want to use")
         user_guess = input().strip().upper()
+        while "-" in user_guess:
+            print("don't think you wanted to do that champ. try again")
+            user_guess = input().strip().upper()
         if user_guess != "":
             guess = user_guess
         print(f"You used {guess}. What does that give you?")
