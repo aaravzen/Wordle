@@ -28,9 +28,9 @@ def word_finder(word_list, greens, yellows, reds):
 def calculate_new_colors(guess,response,greens,yellows,reds):
     new_greens = ""
     for idx,color in enumerate(response):
-        if color == "G":
+        if color.upper() == "G":
             new_greens += guess[idx]
-        elif color == "Y":
+        elif color.upper() == "Y":
             yellows.append((guess[idx],idx))
             new_greens += greens[idx]
         else:
@@ -50,18 +50,22 @@ def main():
     print("What does that give you?")
     user_answer = input()
     wordle_round = 1
-    while user_answer != "GGGGG" and wordle_round < 6:
+    while user_answer.upper() != "GGGGG" and wordle_round < 6:
         greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds)
         print(f"\ngreens: {greens}")
         print(f"yellows: {yellows}")
         print(f"reds: {reds}\n")
         found = word_finder(word_list, greens, yellows, reds)
         guess = found[0]
-        print(f"Next, let's use {guess}")
-        print("What does that give you?")
+        print(f"These are you options now: {', '.join(w for w in found)}")
+        print(f"Press enter to use {guess}, or else type what you want to use")
+        user_guess = input().strip().upper()
+        if user_guess != "":
+            guess = user_guess
+        print(f"You used {guess}. What does that give you?")
         user_answer = input()
         wordle_round += 1
-    if user_answer == "GGGGG":
+    if user_answer.upper() == "GGGGG":
         print(f"Yay! you just got the wordle in {wordle_round} rounds!")
     else:
         greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds)
