@@ -105,7 +105,7 @@ def main():
     if user_answer.upper() == "GGGGG":
         print(f"Yay! you just got the wordle in {wordle_round} rounds!")
     else:
-        greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds, good_letters)
+        greens,yellows,reds,good_letters = calculate_new_colors(guess, user_answer, greens, yellows, reds, good_letters)
         found = word_finder(word_list, greens, yellows, reds)
         print("I'm sorry you didn't get the wordle :( The other possible words are:")
         print("\n".join(word for word in found))
