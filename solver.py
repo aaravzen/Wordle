@@ -92,7 +92,9 @@ def main():
         print(f"These are you options now: {', '.join(w for w in found)}")
         print(f"Press enter to use {guess}, or else type what you want to use")
         user_guess = input().strip().upper()
-        if user_guess == "GGGGG": break
+        if user_guess == "GGGGG":
+            user_answer = "GGGGG"
+            break
         while "-" in user_guess:
             print("don't think you wanted to do that champ. try again")
             user_guess = input().strip().upper()
@@ -103,7 +105,7 @@ def main():
     if user_answer.upper() == "GGGGG":
         print(f"Yay! you just got the wordle in {wordle_round} rounds!")
     else:
-        greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds)
+        greens,yellows,reds = calculate_new_colors(guess, user_answer, greens, yellows, reds, good_letters)
         found = word_finder(word_list, greens, yellows, reds)
         print("I'm sorry you didn't get the wordle :( The other possible words are:")
         print("\n".join(word for word in found))
