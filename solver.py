@@ -97,8 +97,15 @@ def main():
     word_list = get_sorted_best_word_list()
     found = word_finder(word_list, greens, yellows, reds, confirmed_singles, confirmed_multiples)
     guess = found[0]
-    print(f"Hi, welcome to your personalized wordle solver! Start with {guess}")
-    print("What does that give you?")
+    print(f"Hi, welcome to your personalized wordle solver!")
+    print(f"Press enter to use {guess}, or else type what you want to use")
+    user_guess = input().strip().upper()
+    while "-" in user_guess:
+        print("don't think you wanted to do that champ. try again")
+        user_guess = input().strip().upper()
+    if user_guess != "":
+        guess = user_guess
+    print(f"You used {guess}. What does that give you?")
     user_answer = input()
     wordle_round = 1
     while user_answer.upper() != "GGGGG" and wordle_round < 6:
